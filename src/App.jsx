@@ -7,7 +7,7 @@ import { AboutSection } from "./components/about-section";
 import { EducationSection } from "./components/education-section";
 import { SkillsSection } from "./components/skills-section";
 import { ProjectsSection } from "./components/projects-section";
-// import { ExperienceSection } from "./components/experience-section"
+import { ExperienceSection } from "./components/experience-section";
 import { TerminalFooter } from "./components/terminal-footer";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
             <EducationSection />
             <SkillsSection />
             <ProjectsSection />
-            {/* <ExperienceSection /> */}
+            <ExperienceSection />
           </div>
         </div>
 
