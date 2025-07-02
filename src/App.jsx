@@ -14,16 +14,22 @@ function App() {
   "use client";
 
   return (
-    <div className="min-h-screen text-gray-300 bg-gray-900 font-mono relative overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto p-4">
-        <TerminalHeader />
+    <div className="min-h-screen bg-gray-900 text-gray-300 font-mono relative">
+      {/* Sticky Terminal Header with background */}
+      <div className="sticky top-0 z-50 bg-gray-900 pt-4">
+        <div className="max-w-6xl mx-auto px-4">
+          <TerminalHeader />
+        </div>
+      </div>
 
-        <div className="bg-gray-900 border-l border-r border-gray-600 p-6">
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pb-4">
+        <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-6">
           <div className="mb-6">
             <div className="text-gray-400 mb-2">
               $ cat developer_profile.json
             </div>
-            <TypingAnimation text="Welcome to Wiktor Szydłowski Developer Portfolio" />
+            <TypingAnimation text="Welcome to Alex Johnson's Developer Portfolio" />
           </div>
 
           <JsonHeader />
