@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { useState } from "react";
+
 import { TerminalHeader } from "./components/terminal-header";
 import { TypingAnimation } from "./components/typing-animation";
 import { JsonHeader } from "./components/json-header";
@@ -10,41 +12,86 @@ import { ProjectsSection } from "./components/projects-section";
 import { ExperienceSection } from "./components/experience-section";
 import { TerminalFooter } from "./components/terminal-footer";
 
+import { StartupAnimation } from "./components/startup-animation";
+import { ShutdownAnimation } from "./components/shutdown-animation";
+
 function App() {
-  "use client";
+  const [showStartup, setShowStartup] = useState(true);
+  const [showShutdown, setShowShutdown] = useState(false);
+  const [isMaximized, setIsMaximized] = useState(false);
+
+  const handleStartupComplete = () => {
+    setShowStartup(false);
+  };
+
+  const handleShutdown = () => {
+    setShowShutdown(true);
+  };
+
+  const handleShutdownComplete = () => {
+    setShowShutdown(false);
+    setShowStartup(true);
+    setIsMaximized(false);
+  };
+
+  const handleMaximize = () => {
+    setIsMaximized(!isMaximized);
+  };
+
+  const showMainContent = !showStartup && !showShutdown;
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-mono relative">
-      {/* Sticky Terminal Header with background */}
-      <div className="sticky top-0 z-50 bg-gray-900 pt-4">
-        <div className="max-w-6xl mx-auto px-4">
-          <TerminalHeader />
+      {showStartup && <StartupAnimation onComplete={handleStartupComplete} />}
+      {showShutdown && (
+        <ShutdownAnimation onComplete={handleShutdownComplete} />
+      )}
+
+      {showMainContent && (
+        <div className="sticky top-0 z-50 bg-gray-900 pt-4">
+          <div
+            className={`mx-auto px-4 transition-all duration-300 ${
+              isMaximized ? "max-w-full" : "max-w-6xl"
+            }`}
+          >
+            <TerminalHeader
+              onShutdown={handleShutdown}
+              onMaximize={handleMaximize}
+              isMaximized={isMaximized}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 pb-4">
-        <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-6">
-          <div className="mb-6">
-            <div className="text-gray-400 mb-2">
-              $ cat developer_profile.json
+      {showMainContent && (
+        <div
+          className={`relative z-10 mx-auto px-4 pb-4 transition-all duration-300 ${
+            isMaximized ? "max-w-full" : "max-w-6xl"
+          }`}
+        >
+          <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-6">
+            <div className="mb-6">
+              <div className="text-gray-400 mb-2">
+                $ cat developer_profile.json
+              </div>
+              <TypingAnimation text="Welcome to Alex Johnson's Developer Portfolio" />
             </div>
-            <TypingAnimation text="Welcome to Alex Johnson's Developer Portfolio" />
+
+            <JsonHeader />
+
+            <div className="space-y-6">
+              <AboutSection />
+              <EducationSection />
+              <SkillsSection />
+              <ProjectsSection />
+              <ExperienceSection />
+            </div>
           </div>
 
-          <JsonHeader />
-
-          <div className="space-y-6">
-            <AboutSection />
-            <EducationSection />
-            <SkillsSection />
-            <ProjectsSection />
-            <ExperienceSection />
-          </div>
+          <TerminalFooter />
         </div>
-
-        <TerminalFooter />
-      </div>
+      )}
     </div>
   );
 }
