@@ -5,7 +5,7 @@ import { TypingAnimation } from "./components/typing-animation";
 import { JsonHeader } from "./components/json-header";
 import { AboutSection } from "./components/about-section";
 import { EducationSection } from "./components/education-section";
-// import { SkillsSection } from "./components/skills-section"
+import { SkillsSection } from "./components/skills-section";
 // import { ProjectsSection } from "./components/projects-section"
 // import { ExperienceSection } from "./components/experience-section"
 import { TerminalFooter } from "./components/terminal-footer";
@@ -31,7 +31,7 @@ function App() {
           <div className="space-y-6">
             <AboutSection />
             <EducationSection />
-            {/* <SkillsSection /> */}
+            <SkillsSection />
             {/* <ProjectsSection /> */}
             {/* <ExperienceSection /> */}
           </div>

@@ -1,10 +1,10 @@
-import { Folder, Code } from "lucide-react";
+import { Folder } from "lucide-react";
 import { FileHeader } from "./file-header";
 
 export function AboutSection() {
   return (
     <div className="border border-gray-600">
-      <FileHeader icon={Folder} filename="./about" additionalIcon={Code} />
+      <FileHeader icon={Folder} filename="./about" />
       <div className="p-4">
         <div className="text-gray-500 text-sm mb-2">/* Summary */</div>
         <div className="text-gray-300 leading-relaxed">
@@ -33,7 +33,7 @@ export function AboutSection() {
             <div>
               <span className="text-blue-400">goal</span>:{" "}
               <span className="text-green-400">
-                'Contributing to innovative tech projects'
+                'Get hired as a Software Engineer Intern'
               </span>
             </div>
           </div>
