@@ -35,14 +35,14 @@ export function SkillsSection() {
         filename="skills.json"
         iconColor="text-blue-400"
       />
-      <div className="p-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="p-3 sm:p-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {skillsData.map((section, idx) => (
             <div key={idx}>
-              <div className="text-orange-400 mb-3">
+              <div className="text-orange-400 mb-2 sm:mb-3 text-sm sm:text-base">
                 "{section.category}": [
               </div>
-              <div className="ml-4 flex flex-wrap gap-2">
+              <div className="ml-2 sm:ml-4 flex flex-wrap gap-1 sm:gap-2">
                 {section.skills.map((skill, skillIdx) => (
                   <Badge
                     key={skillIdx}
@@ -52,7 +52,9 @@ export function SkillsSection() {
                   </Badge>
                 ))}
               </div>
-              <div className="text-orange-400 mt-2">]</div>
+              <div className="text-orange-400 mt-1 sm:mt-2 text-sm sm:text-base">
+                ]
+              </div>
             </div>
           ))}
         </div>

@@ -48,10 +48,12 @@ function App() {
       )}
 
       {showMainContent && (
-        <div className="sticky top-0 z-50 bg-gray-900 pt-4">
+        <div className="sticky top-0 z-50 bg-gray-900 pt-2 sm:pt-4">
           <div
             className={`transition-all duration-300 ${
-              isMaximized ? "w-full px-4" : "max-w-6xl mx-auto px-4"
+              isMaximized
+                ? "w-full px-2 sm:px-4"
+                : "max-w-6xl mx-auto px-2 sm:px-4"
             }`}
           >
             <TerminalHeader
@@ -66,13 +68,15 @@ function App() {
       {/* Main Content */}
       {showMainContent && (
         <div
-          className={`relative z-10 pb-4 transition-all duration-300 ${
-            isMaximized ? "w-full px-4" : "max-w-6xl mx-auto px-4"
+          className={`relative z-10 pb-2 sm:pb-4 transition-all duration-300 ${
+            isMaximized
+              ? "w-full px-2 sm:px-4"
+              : "max-w-6xl mx-auto px-2 sm:px-4"
           }`}
         >
-          <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-6">
-            <div className="mb-6">
-              <div className="text-gray-400 mb-2">
+          <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-3 sm:p-6">
+            <div className="mb-4 sm:mb-6">
+              <div className="text-gray-400 mb-2 text-xs sm:text-sm">
                 $ cat developer_profile.json
               </div>
               <TypingAnimation text="Welcome to Wiktor Szydłowski's Developer Portfolio" />
@@ -80,7 +84,7 @@ function App() {
 
             <JsonHeader />
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <AboutSection />
               <EducationSection />
               <SkillsSection />
