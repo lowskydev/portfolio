@@ -65,7 +65,7 @@ const startupMessages = [
   },
   { text: "$ cat developer_profile.json", delay: 500, type: "command" },
   { text: "Loading portfolio interface...", delay: 500, type: "loading" },
-  { text: "", delay: 500, type: "loading" },
+  { text: "", delay: 1000, type: "loading" },
 ];
 
 export function StartupAnimation({ onComplete }) {

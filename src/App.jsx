@@ -50,8 +50,8 @@ function App() {
       {showMainContent && (
         <div className="sticky top-0 z-50 bg-gray-900 pt-4">
           <div
-            className={`mx-auto px-4 transition-all duration-300 ${
-              isMaximized ? "max-w-full" : "max-w-6xl"
+            className={`transition-all duration-300 ${
+              isMaximized ? "w-full px-4" : "max-w-6xl mx-auto px-4"
             }`}
           >
             <TerminalHeader
@@ -66,8 +66,8 @@ function App() {
       {/* Main Content */}
       {showMainContent && (
         <div
-          className={`relative z-10 mx-auto px-4 pb-4 transition-all duration-300 ${
-            isMaximized ? "max-w-full" : "max-w-6xl"
+          className={`relative z-10 pb-4 transition-all duration-300 ${
+            isMaximized ? "w-full px-4" : "max-w-6xl mx-auto px-4"
           }`}
         >
           <div className="bg-gray-900 border-l border-r border-b border-gray-600 p-6">

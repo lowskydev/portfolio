@@ -32,7 +32,7 @@ const shutdownMessages = [
   { text: "", delay: 60, type: "spacer" },
   { text: "System halted.", delay: 500, type: "final" },
   { text: "Power off.", delay: 500, type: "final" },
-  { text: "", delay: 500, type: "loading" },
+  { text: "", delay: 1000, type: "loading" },
 ];
 
 export function ShutdownAnimation({ onComplete }) {
