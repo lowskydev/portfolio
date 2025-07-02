@@ -8,7 +8,7 @@ import { EducationSection } from "./components/education-section";
 // import { SkillsSection } from "./components/skills-section"
 // import { ProjectsSection } from "./components/projects-section"
 // import { ExperienceSection } from "./components/experience-section"
-// import { TerminalFooter } from "./components/terminal-footer"
+import { TerminalFooter } from "./components/terminal-footer";
 
 function App() {
   "use client";
@@ -37,7 +37,7 @@ function App() {
           </div>
         </div>
 
-        {/* <TerminalFooter /> */}
+        <TerminalFooter />
       </div>
     </div>
   );
