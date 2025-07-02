@@ -5,15 +5,15 @@ import { FileHeader } from "./file-header";
 const skillsData = [
   {
     category: "languages",
-    skills: ["Python", "Java", "JavaScript", "TypeScript", "C++", "SQL"],
+    skills: ["Python", "Java", "C", "C++", "SQL", "Rust", "JavaScript"],
   },
   {
     category: "frameworks",
-    skills: ["React", "Node.js", "Express.js", "Next.js", "Django", "Flask"],
+    skills: ["Django", "Flask", "React"],
   },
   {
     category: "tools",
-    skills: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Linux"],
+    skills: ["Git", "Docker", "Linux", "PostgreSQL", "Neo4j"],
   },
   {
     category: "other",
@@ -30,7 +30,11 @@ const skillsData = [
 export function SkillsSection() {
   return (
     <div className="border border-gray-600">
-      <FileHeader icon={File} filename="skills.json" iconColor="text-red-400" />
+      <FileHeader
+        icon={File}
+        filename="skills.json"
+        iconColor="text-blue-400"
+      />
       <div className="p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillsData.map((section, idx) => (

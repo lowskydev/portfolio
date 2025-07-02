@@ -14,7 +14,7 @@ function App() {
   "use client";
 
   return (
-    <div className="min-h-screentext-gray-300 font-mono relative overflow-hidden">
+    <div className="min-h-screen text-gray-300 bg-gray-900 font-mono relative overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto p-4">
         <TerminalHeader />
 
