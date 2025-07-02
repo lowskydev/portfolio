@@ -75,7 +75,7 @@ function App() {
               <div className="text-gray-400 mb-2">
                 $ cat developer_profile.json
               </div>
-              <TypingAnimation text="Welcome to Alex Johnson's Developer Portfolio" />
+              <TypingAnimation text="Welcome to Wiktor Szydłowski's Developer Portfolio" />
             </div>
 
             <JsonHeader />
