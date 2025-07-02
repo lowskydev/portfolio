@@ -4,7 +4,7 @@ import { TerminalHeader } from "./components/terminal-header";
 import { TypingAnimation } from "./components/typing-animation";
 import { JsonHeader } from "./components/json-header";
 import { AboutSection } from "./components/about-section";
-import { EducationSection } from "./components/education-section";
+// import { EducationSection } from "./components/education-section";
 // import { SkillsSection } from "./components/skills-section"
 // import { ProjectsSection } from "./components/projects-section"
 // import { ExperienceSection } from "./components/experience-section"
@@ -30,7 +30,7 @@ function App() {
 
           <div className="space-y-6">
             <AboutSection />
-            <EducationSection />
+            {/* <EducationSection /> */}
             {/* <SkillsSection /> */}
             {/* <ProjectsSection /> */}
             {/* <ExperienceSection /> */}
